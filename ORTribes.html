@@ -70,14 +70,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"></script>
 
     <!--story map plugin-->
-    <script src="storymap.2.4.js"></script>
+    <script src="storymap.2.5.js"></script>
 </head>
 <body>
   <div id= "map"></div>
 <div id="storymap" class="container-fluid">
     <div class="row">
-        <div class="col-sm-6 col-md-8 storymap-map"></div>
-        <div class="col-sm-6 col-md-4 storymap-story">
+
+      <div class="col-sm-6 col-md-4 storymap-story">
             <section data-scene="oregontribes">
                 <h2>The Nine Federally Recognized Tribes</h2>
                 There are nine federally recognized Tribes in the State of Oregon. The reconized tribes include
@@ -110,7 +110,7 @@
                 bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla blabla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
             </section>
         </div>
-
+          <div class="col-sm-6 col-md-8 storymap-map"></div>
     </div>
 </div>
 <script type="text/javascript">
@@ -120,17 +120,13 @@
             layer1: L.tileLayer('https://api.mapbox.com/styles/v1/larrabeb/cjsqbglao0owh1fo507ox5473/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoibGFycmFiZWIiLCJhIjoiY2pycWo4NTg3MXBjMDQzbXVmZDU1YTA1ayJ9.CheH4rjgSkTs0myD-1XCtQ')}
           };
 
-          {  legend: '<i style="background: black; opacity: 0.5"></i><p><b>legend 1</b></p>' }
-        ;
-
-
     var scenes = {
         scene1: {lat: 43.991, lng: -120.326, zoom: 6.31, layers: [layers.layer1], name: "oregontribes"},
         scene2: {lat: 42.527, lng: -124.040, zoom: 10.12, layers: [layers.layer1], name: "dvh nee"},
         scene3: {lat: 44.740, lng: -123.894, zoom: 12.69, layers: [layers.layer1], name: "siletz"}
     };
 
-    $('#storymap').storymap({
+    $ ('#storymap').storymap({
         scenes: scenes,
         baselayer: layers.layer1,
         legend: true,

@@ -1,10 +1,11 @@
+/*Updated on 02/24/2018| version 2.5 | MIT License*/
 html {
     height: 100%;
 }
 
 body {
     height: 100%;
-    font-family: Open Sans, bree serif;
+    font-family: Cairo, sans-serif;
     font-size: 14px;
 }
 
@@ -23,8 +24,8 @@ body {
 
 h1 {
     margin-top: 25%;
-    font-family: Open Sans, bree serif;
-    color: rgba(0, 77, 64, 0.95);
+    font-family: Cairo, sans-serif;
+    color: rgba(255, 255, 255, 0.95);
     font-size: 4vw;
     text-shadow: 0 0 6px rgba(0, 0, 0, .95);
 }
@@ -44,7 +45,7 @@ h1 {
     padding-bottom: 1000px;
     display: block;
     z-index: 1000;
-    background-color: rgba(169, 161, 140, 0);
+    background-color: rgba(238, 238, 238, 0);
 
 
 
