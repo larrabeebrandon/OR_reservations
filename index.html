@@ -56,10 +56,10 @@
             <section data-scene="overview" data-background="assets/img/begin.jpg">
                 <div class="fullscreen text-center">
 
-                    <h1 class="display-4 d-flex justify-content-center" style="color: rgba(0,148,133,1)">Federally Recognized Tribes of Oregon</h1>
+                    <h1 class="display-4 d-flex justify-content-center" style="color: rgba(0,0,0,1)">Federally Recognized Tribes of Oregon</h1>
 
 
-                    <small class="d-flex justify-content-center" style="color: rgba(0,148,133,1)">This story map
+                    <small class="d-flex justify-content-center" style="color: rgba(0,0,0,1)">This story map
                         illustrates the nine federally recognized Tribes in Oregon.
                     </small>
                 </div>
@@ -90,7 +90,12 @@
             <section data-scene="dvh">
                 <h2>Dvh-Nee</h2>
                 The multiple bands and Tribes that make up the Confederated Tribes of Siletz Indians come from the Columbian River down into northern California and from the Pacific Ocean on the west to the Cascades in the east were sent
-                at different times to the reservation that is today known as the Siletz Reservation. My ancestors who were were later grouped into the Tututni lived
+                at different times to the reservation that is today known as the Siletz Reservation. My ancestors who were were later grouped into the Tututni lived in the Rouge/Chetco river areas of southwest oregon. The term dvh-nee, pronouced duh-nae, is what
+                the people called home. There isn't really a english translation to the word that does it justice but eloquently speaking it is where the people come from, where they are, and where they should always be. Like with most indigenous Tribes
+                my ancestors were deeply connected with the land they occupied. It gave them life, food, water, and shelter were abundant in every direction pre-european contact. The people honored the land and held ceremonies to give thanks and pray for
+                upcoming harvest to be bountiful. The people lived with the cycles of the land and moved from winter to summer villages to stay close to the food sources which were salmon, big game, and seafood. The Chetco river country is beautiful and
+                going back there I understand why my ancestors fought so hard before eventually being forced onto reservations.
+                <img src="assets/img/dvh.jpg" alt="Chetco River Valley" width="800" height="450">       Photo of the Chetco River Taken by myself in the Summer of 2017.
               </section>
 
             <section data-scene="siletz">
@@ -99,10 +104,11 @@
                 19 million acres that the tribes originally inhabited. After the people were relocated to the Siletz reservation the treaties were ignored by the americans and by 1875
                 more than 900,000 acres had been taken from the Siletz without regard to treaties already in place. The 1887 Allotment Act was a further attack on the land holdings of the Siletz
                 by parceling out what was left to living tribal members they were able to take the rest of the land because the living members had already been alloted their parcel. The rest of the land was taken and now is what is known
-                as Lincoln County.>
+                as Lincoln County. The modern Siletz reservation consists of patchwork lands across lincoln county and tribal membership is around 5,100 people.
+<img src="assets/img/siletz.jpg" alt="Siletz Administration Building" width="800" height="450"> Photo source ctsi.nsn.us.
             </section>
 
-            <section data-scene="end" data-background="assets/img/end.jpg">
+            <section data-scene="end" data-background="assets/img/end.jpg" style="height: 450px;">
                 <div class="fullscreen text-center">
                     <h1 class="display-4 d-flex justify-content-center">Shu''aa-shi nin-la (Thank you-Athabaskan) </h1>
                 </div>
@@ -165,21 +171,21 @@
     };
 
     var scenes = {
-        overview: {lat: 44.0000000, lng: -123.5000000, zoom: 1, layers: [layers.layer1], name: 'Cover Page'},
+        overview: {lat: 44.0000000, lng: -123.5000000, zoom: 1, layers: [], name: 'Cover Page'},
         ot: {lat: 43.991, lng: -120.326, zoom: 7, layers: [layers.layer1], name: "OregonTribes"},
         dvh: {lat: 42.527, lng: -124.040, zoom: 10.12, layers: [layers.layer1], name: "Dvh-nee"},
         siletz: {lat: 44.740, lng: -123.894, zoom: 12.69, layers: [layers.layer1], name: "Siletz"},
-        end: {lat: 44.0000000, lng: -123.5000000, zoom: 7, layers: [layers.layer1], name: 'The End'}
+        end: {lat: 44.0000000, lng: -123.5000000, zoom: 7, layers: [], name: 'The End'}
     };
 
     $('#storymap').storymap({
         scenes: scenes,
         baselayer: layers.layer1,
-        legend: true, // if you do not want a legend feature, you can simply not define the createLegend function.
-        credits: "",
+        legend: false, // if you do not want a legend feature, you can simply not define the createLegend function.
+        credits: "Created by Brandon Larrabee",
         loader: true,
-        scalebar: false,
-        flyo: true,
+        scalebar: true,
+        flyto: true,
         navwidget: true,
 
         createMap: function () {
@@ -187,7 +193,7 @@
             var map = L.map($(".storymap-map")[0], {
                 zoomControl: false, scrollWheelZoom: false, fadeAnimation: true,
                 zoomAnimation: true
-            }).setView([44, -120], 7);
+            }).setView([44, -120], 10);
 
             //add an miniglobe
             new L.Control.GlobeMiniMap({
